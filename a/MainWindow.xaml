@@ -128,7 +128,7 @@
             <Grid Width="330" Height="408">
                 <Label Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#99FFFFFF" Margin="0,340,0,0" VerticalAlignment="Top" Width="330" Content="自定义文本"></Label>
                 <ScrollViewer>
-                    <StackPanel Margin="0,4,0,0">
+                    <StackPanel x:Name="EventPanel" Margin="0,4,0,0">
                         <Border Height="47" Width="320" BorderBrush="White" Background="#33FF0000" BorderThickness="1,1,1,1" CornerRadius="4,4,4,4">
                             <Grid>
                                 <Image Margin="8,6,294,22" Source="/Img/right.png"></Image>
@@ -152,14 +152,7 @@
                                 <Image Margin="8,6,294,22" Source="/Img/img.png"></Image>
                                 <Label Background="{x:Null}" BorderBrush="{x:Null}" Width="290" Height="46" Content="2025年" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Top"></Label>
                                 <Label Background="{x:Null}" BorderBrush="{x:Null}" Width="320" Height="46" Content="365天" Foreground="White" HorizontalContentAlignment="Right" VerticalContentAlignment="Top"></Label>
-                                <ProgressBar x:Name="progressBarg" Style="{StaticResource ProgressBarFlat}" Value="64" Margin="10,39,10,2" Background="#CCABABAB" >
-                                    <ProgressBar.Foreground>
-                                        <LinearGradientBrush EndPoint="1,0">
-                                            <GradientStop Color="#FF326CF3"/>
-                                            <GradientStop Color="#BF326CF3" Offset="1"/>
-                                        </LinearGradientBrush>
-                                    </ProgressBar.Foreground>
-                                </ProgressBar>
+                                <ProgressBar x:Name="progressBarg" Style="{StaticResource ProgressBarFlat}" Value="64" Margin="10,39,10,2" Background="#CCABABAB" Foreground="#FF336DF3" />
                                 <Label Background="{x:Null}" BorderBrush="{x:Null}" Width="320" Height="46" Foreground="White" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" Content="{Binding Value, ElementName=progressBarg, StringFormat=\{0:P\}{%}}"/>
                                 <Label Background="{x:Null}" BorderBrush="{x:Null}" Width="320" Height="46" Content="2025/1/1" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom"></Label>
 
@@ -230,5 +223,6 @@
                 </Image.RenderTransform>
             </Image>
         </Button>
+        <Button Content="Make" Click="Button_Click_1"/>
     </Grid>
 </Window>
